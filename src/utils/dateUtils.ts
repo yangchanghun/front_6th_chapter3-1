@@ -27,15 +27,16 @@ export function getWeeksAtMonth(currentDate: Date) {
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
   const daysInMonth = getDaysInMonth(year, month + 1);
-  const firstDayOfMonth = new Date(year, month, 1).getDay();
-  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+  const firstDayOfMonth = new Date(year, month, 1).getDay(); // 일,월,화,...
+  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1); // [1,2,3,4,5...]
   const weeks = [];
 
-  const initWeek = () => Array(7).fill(null);
+  const initWeek = () => Array(7).fill(null); // [null,null,....]
 
   let week: Array<number | null> = initWeek();
 
   for (let i = 0; i < firstDayOfMonth; i++) {
+    //[null,null....]
     week[i] = null;
   }
 

@@ -2,8 +2,50 @@ import { act, renderHook } from '@testing-library/react';
 
 import { useSearch } from '../../hooks/useSearch.ts';
 import { Event } from '../../types.ts';
+const mockEvents: Event[] = [
+  {
+    id: '1',
+    title: '면접공부',
+    date: '2025-08-19',
+    startTime: '10:00',
+    endTime: '11:00',
+    description: '면접 준비',
+    location: '내 방',
+    category: '개인',
+    repeat: { type: 'none', interval: 0 },
+    notificationTime: 10,
+  },
+  {
+    id: '2',
+    title: '회의',
+    date: '2025-08-19',
+    startTime: '12:00',
+    endTime: '13:00',
+    description: '회의',
+    location: '카페',
+    category: '업무',
+    repeat: { type: 'none', interval: 0 },
+    notificationTime: 10,
+  },
+  {
+    id: '3',
+    title: '코테풀기',
+    date: '2025-08-19',
+    startTime: '18:00',
+    endTime: '19:00',
+    description: '코테 풀기',
+    location: '릿코드',
+    category: '개인',
+    repeat: { type: 'none', interval: 0 },
+    notificationTime: 10,
+  },
+];
 
-it('검색어가 비어있을 때 모든 이벤트를 반환해야 한다', () => {});
+// it('검색어가 비어있을 때 모든 이벤트를 반환해야 한다', () => {
+//   const { result } = renderHook(() => useSearch(mockEvents, new, 'month'));
+
+//   expect(result.current.filteredEvents).toEqual(mockEvents);
+// });
 
 it('검색어에 맞는 이벤트만 필터링해야 한다', () => {});
 
